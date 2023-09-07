@@ -1,0 +1,12 @@
+{
+  "name": "minecraft-ram-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "start": "node src/main"
+  },
+  "author": "joanferrecid098",
+  "license": "MIT"
+}
