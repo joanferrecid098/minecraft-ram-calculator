@@ -9,9 +9,7 @@
   },
   "author": "joanferrecid098",
   "license": "MIT",
-  "dependencies": {
-    "package-name": "^0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@playwright/test": "^1.37.1"
   }
