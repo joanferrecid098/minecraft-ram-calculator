@@ -38,13 +38,4 @@ function calculateRAMNeeded (numPlayers, maxPlayersPerInstance, maxInstances) {
   };
 }
 
-// Example usage:
-const maxPlayersPerInstance = 10000000;
-const maxInstances = 10000; // Set your maximum instances here.
-
-const numPlayers = 100;
-const ramNeeded = calculateRAMNeeded(numPlayers, maxPlayersPerInstance, maxInstances);
-console.log(`For ${numPlayers} players, you need ${ramNeeded.ramNeeded} GB RAM.`);
-console.log(`This will use ${ramNeeded.instances} instances, leaving ${ramNeeded.playersLeftOut} players left out.`);
-
 module.exports = calculateRAMNeeded;
