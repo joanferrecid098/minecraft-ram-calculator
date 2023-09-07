@@ -1,27 +1,33 @@
 function calculateMinigameInstances(players, maxPlayersPerInstance, maxInstances) {
-    if (players <= 0 || maxPlayersPerInstance <= 0) {
-      return { instancesNeeded: 0, playersLeftOut: players };
-    }
-  
-    // Calculate the number of instances needed.
-    const instancesNeeded = Math.ceil(players / maxPlayersPerInstance);
-  
-    // Limit the number of instances to the maximum allowed.
-    const instancesToCreate = Math.min(instancesNeeded, maxInstances);
-    
-    // Calculate the players left out.
-    const playersLeftOut = players - (instancesToCreate * maxPlayersPerInstance);
-    
-    if (playersLeftOut <= 0) return { instancesNeeded: instancesToCreate };
-
-    return { instancesNeeded: instancesToCreate, playersLeftOut };
+  if (players <= 0 || maxPlayersPerInstance <= 0) {
+    return { instancesNeeded: 0, playersLeftOut: players, playersInInstances: [] };
   }
-  
-// Example usage:
-const totalPlayers = 50;
-const maxPlayersPerInstance = 8;
-const maxInstances = 3; // Set your maximum instances here.
-const { instancesNeeded, playersLeftOut } = calculateMinigameInstances(totalPlayers, maxPlayersPerInstance, maxInstances);
 
-console.log(`You need ${instancesNeeded} instances of the minigame for ${totalPlayers} players.`);
-if (playersLeftOut) console.log(`There are ${playersLeftOut} players left out.`);
+  // If the number of players can be accommodated in a single instance.
+  if (players <= maxPlayersPerInstance) {
+    return { instancesNeeded: 1, playersLeftOut: 0, playersInInstances: [players] };
+  }
+
+  // Calculate the number of instances needed.
+  const instancesNeeded = Math.ceil(players / maxPlayersPerInstance);
+
+  // Limit the number of instances to the maximum allowed.
+  const instancesToCreate = Math.min(instancesNeeded, maxInstances);
+
+  // Calculate the players left out.
+  const playersLeftOut = players - (instancesToCreate * maxPlayersPerInstance);
+
+  // Calculate the distribution of players in each instance.
+  const playersInInstances = Array(instancesToCreate).fill(maxPlayersPerInstance);
+
+  // Distribute the remaining players if any.
+  for (let i = 0; i < playersLeftOut; i++) {
+    playersInInstances[i % instancesToCreate]++;
+  }
+
+  return { instancesNeeded: instancesToCreate, playersLeftOut, playersInInstances };
+}
+
+module.exports = {
+  calculateMinigameInstances
+}

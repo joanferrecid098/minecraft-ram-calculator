@@ -8,5 +8,8 @@
     "start": "node src/main"
   },
   "author": "joanferrecid098",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "package-name": "^0.1.0"
+  }
 }
