@@ -11,5 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "package-name": "^0.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.37.1"
   }
 }
