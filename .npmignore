@@ -131,3 +131,10 @@ dist
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Playwright
+/tests/
+playwright.config.js
+
+# Additional GitHub Files
+LICENSE
