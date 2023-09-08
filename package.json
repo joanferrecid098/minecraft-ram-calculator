@@ -9,6 +9,10 @@
   },
   "author": "joanferrecid098",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joanferrecid098/minecraft-ram-calculator.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "@playwright/test": "^1.37.1"
