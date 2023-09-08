@@ -2,6 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/minecraft-ram-calculator.svg)](https://www.npmjs.com/package/minecraft-ram-calculator)
 [![License](https://img.shields.io/github/license/joanferrecid098/minecraft-ram-calculator)](https://github.com/joanferrecid098/minecraft-ram-calculator/blob/main/LICENSE)
+[![Node.js Package](https://github.com/joanferrecid098/minecraft-ram-calculator/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/joanferrecid098/minecraft-ram-calculator/actions/workflows/npm-publish.yml)
 
 The Minecraft RAM Calculator is an npm package that simplifies the process of determining how much RAM is required for your Minecraft server, based on various server and player-related factors. This tool helps server administrators optimize their server's performance by ensuring they allocate the appropriate amount of memory.
 
