@@ -5,7 +5,10 @@
   "main": "src/main.js",
   "scripts": {
     "test": "npx playwright test",
-    "start": "node src/main"
+    "start": "node src/main",
+    "release:major": "npm version major",
+    "release:minor": "npm version minor",
+    "release:patch": "npm version patch"
   },
   "author": "joanferrecid098",
   "license": "MIT",
