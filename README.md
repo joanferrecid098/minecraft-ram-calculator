@@ -23,23 +23,24 @@ npm install minecraft-ram-calculator
 ## Usage
 
 ```javascript
-const { calculateRAM } = require('minecraft-ram-calculator');
+const mrc = require('minecraft-ram-calculator');
 
-// Define your server and player variables
-const serverProperties = {
-  difficulty: 'normal', // 'easy', 'normal', 'hard'
-  worldType: 'default', // 'default', 'flat', 'largeBiomes', 'amplified'
-  plugins: 10, // Number of plugins installed
-  mods: 20, // Number of mods installed
-};
+// Example usage:
+const maxPlayersPerInstance = 8; // Set the maximum players on the instance
+const maxInstances = 7; // Set your maximum instances here.
 
-const playerCount = 50; // Number of players
-
-// Calculate the recommended RAM allocation in gigabytes
-const recommendedRAM = calculateRAM(serverProperties, playerCount);
-
-console.log(`Recommended RAM: ${recommendedRAM}GB`);
+const numPlayers = 100; // The number of players on your server
+const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances);
+console.log(`For ${numPlayers} players, you need ${ramNeeded.ramNeeded} GB RAM.`);
+console.log(`This will use ${ramNeeded.instances} instances, leaving ${ramNeeded.playersLeftOut} players left out.`);
 ```
+
+### Instances
+
+You will have to define the max players you want in every instance. For example, as bedwars solos have the limit of 8 players, this value will be 8.
+If you don't want to have a limit, set this to a very high number like 1000000.
+
+The max instances is to limit the amount of instances to save computing power. You can do the same if you don't want a limit.
 
 ## Configuration
 
