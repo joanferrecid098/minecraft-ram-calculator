@@ -138,3 +138,4 @@ playwright.config.js
 
 # Additional GitHub Files
 LICENSE
+.github/
