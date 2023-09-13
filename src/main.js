@@ -20,8 +20,8 @@ function calculateRAMPerInstance(numPlayers) {
   }
 }
 
-function calculateRAMNeeded (numPlayers, maxPlayersPerInstance, maxInstances) {
-  const instances = calculateMinigameInstances(numPlayers, maxPlayersPerInstance, maxInstances);
+function calculateRAMNeeded (numPlayers, maxPlayersPerInstance, maxInstances, ins = true) {
+  const instances = calculateMinigameInstances(numPlayers, maxPlayersPerInstance, maxInstances, ins);
 
   let ramNeeded = 0;
 

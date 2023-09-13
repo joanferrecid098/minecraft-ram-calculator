@@ -23,11 +23,12 @@ test('Check Multiple Instances', async () => {
 });
 
 test('Check one Instance', async () => {
-  const maxPlayersPerInstance = 1000000;
-  const maxInstances = 1;
+  const ins = false;
+  const maxPlayersPerInstance = 8;
+  const maxInstances = 8;
 
   const numPlayers = 50;
-  const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances);
+  const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances, ins);
   
   await test.step('Check RAM Result', async () => {
     await expect(ramNeeded.ramNeeded).toEqual(8);

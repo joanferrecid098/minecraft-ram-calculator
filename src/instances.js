@@ -1,8 +1,12 @@
-function calculateMinigameInstances(players, maxPlayersPerInstance, maxInstances) {
+function calculateMinigameInstances(players, maxPlayersPerInstance, maxInstances, ins) {
+  if (ins == false) {
+    return { instancesNeeded: 1, playersLeftOut: 0, playersInInstances: [players] };
+  }
+
   if (players <= 0 || maxPlayersPerInstance <= 0) {
     return { instancesNeeded: 0, playersLeftOut: players, playersInInstances: [] };
   }
-
+  
   // If the number of players can be accommodated in a single instance.
   if (players <= maxPlayersPerInstance) {
     return { instancesNeeded: 1, playersLeftOut: 0, playersInInstances: [players] };
