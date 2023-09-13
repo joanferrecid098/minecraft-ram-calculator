@@ -32,6 +32,7 @@ const maxInstances = 7; // Set your maximum instances here.
 
 const numPlayers = 100; // The number of players on your server
 const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances);
+
 console.log(`For ${numPlayers} players, you need ${ramNeeded.ramNeeded} GB RAM.`);
 console.log(`This will use ${ramNeeded.instances} instances, leaving ${ramNeeded.playersLeftOut} players left out.`);
 ```
@@ -39,9 +40,11 @@ console.log(`This will use ${ramNeeded.instances} instances, leaving ${ramNeeded
 ### Instances
 
 You will have to define the max players you want in every instance. For example, as bedwars solos have the limit of 8 players, this value will be 8.
-If you don't want to have a limit, set this to a very high number like 1000000.
+If you don't want to have a limit, you can add the ``ins`` argument:
 
-The max instances is to limit the amount of instances to save computing power. You can do the same if you don't want a limit.
+```javascript
+const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances, ins = false);
+```
 
 ## Configuration
 
