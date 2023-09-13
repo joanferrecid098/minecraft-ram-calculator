@@ -1,4 +1,10 @@
-function calculateMinigameInstances(players, maxPlayersPerInstance, maxInstances, ins) {
+interface Instances {
+  instancesNeeded: number;
+  playersLeftOut: number;
+  playersInInstances: number[];
+}
+
+function calculateMinigameInstances(players:number, maxPlayersPerInstance:number, maxInstances:number, ins:boolean) {
   if (ins == false) {
     return { instancesNeeded: 1, playersLeftOut: 0, playersInInstances: [players] };
   }
@@ -29,9 +35,11 @@ function calculateMinigameInstances(players, maxPlayersPerInstance, maxInstances
     playersInInstances[i % instancesToCreate]++;
   }
 
-  return { instancesNeeded: instancesToCreate, playersLeftOut, playersInInstances };
+  const response:Instances = { instancesNeeded: instancesToCreate, playersLeftOut, playersInInstances };
+
+  return response;
 }
 
-module.exports = {
+export {
   calculateMinigameInstances
 }

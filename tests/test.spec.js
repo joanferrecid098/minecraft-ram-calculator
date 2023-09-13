@@ -1,13 +1,13 @@
   // @ts-check
 const { test, expect } = require('@playwright/test');
-const mrc = require('../src/main.js');
+const mrc = require('../src/main');
 
 test('Check Multiple Instances', async () => {
   const maxPlayersPerInstance = 8;
   const maxInstances = 4
 
   const numPlayers = 50;
-  const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances);
+  const ramNeeded = mrc.calculateRAMNeeded(numPlayers, maxPlayersPerInstance, maxInstances);
 
   await test.step('Check RAM Result', async () => {
     await expect(ramNeeded.ramNeeded).toEqual(12);
@@ -28,7 +28,7 @@ test('Check one Instance', async () => {
   const maxInstances = 8;
 
   const numPlayers = 50;
-  const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances, ins);
+  const ramNeeded = mrc.calculateRAMNeeded(numPlayers, maxPlayersPerInstance, maxInstances, ins);
   
   await test.step('Check RAM Result', async () => {
     await expect(ramNeeded.ramNeeded).toEqual(8);

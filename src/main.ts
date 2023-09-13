@@ -1,6 +1,12 @@
 const { calculateMinigameInstances } = require('./instances.js');
 
-function calculateRAMPerInstance(numPlayers) {
+interface ServerInfo {
+  ramNeeded: number;
+  instances: number;
+  playersLeftOut: number;
+}
+
+function calculateRAMPerInstance(numPlayers:number) {
   if (numPlayers >= 0 && numPlayers <= 10) {
     return 2;
   } else if (numPlayers <= 15) {
@@ -20,7 +26,7 @@ function calculateRAMPerInstance(numPlayers) {
   }
 }
 
-function calculateRAMNeeded (numPlayers, maxPlayersPerInstance, maxInstances, ins = true) {
+function calculateRAMNeeded (numPlayers:number, maxPlayersPerInstance:number, maxInstances:number, ins:boolean = true) {
   const instances = calculateMinigameInstances(numPlayers, maxPlayersPerInstance, maxInstances, ins);
 
   let ramNeeded = 0;
@@ -31,11 +37,13 @@ function calculateRAMNeeded (numPlayers, maxPlayersPerInstance, maxInstances, in
     ramNeeded = ramNeeded + ram;
   }
 
-  return {
+  const response:ServerInfo = {
     ramNeeded: ramNeeded,
     instances: instances.instancesNeeded,
     playersLeftOut: instances.playersLeftOut
   };
+
+  return response;
 }
 
-module.exports = calculateRAMNeeded;
+export { calculateRAMNeeded };
