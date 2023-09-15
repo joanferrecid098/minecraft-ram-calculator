@@ -17,7 +17,8 @@
     "url": "https://github.com/joanferrecid098/minecraft-ram-calculator.git"
   },
   "devDependencies": {
-    "@playwright/test": "^1.37.1",
+    "@playwright/test": "^1.38.0",
+    "@types/node": "^20.6.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
