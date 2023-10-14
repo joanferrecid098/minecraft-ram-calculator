@@ -43,7 +43,7 @@ You will have to define the max players you want in every instance. For example,
 If you don't want to have a limit, you can add the ``ins`` argument:
 
 ```javascript
-const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances, ins = false);
+const ramNeeded = mrc.calculateRAMNeeded(numPlayers, maxPlayersPerInstance, maxInstances, ins = false);
 ```
 
 ## Configuration
