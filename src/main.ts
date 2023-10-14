@@ -1,4 +1,4 @@
-const { calculateMinigameInstances } = require('./instances.js');
+import { calculateMinigameInstances } from './instances.js';
 
 interface ServerInfo {
   ramNeeded: number;
@@ -46,4 +46,4 @@ function calculateRAMNeeded (numPlayers:number, maxPlayersPerInstance:number, ma
   return response;
 }
 
-export { calculateRAMNeeded };
+export default calculateRAMNeeded;
