@@ -1,6 +1,6 @@
 // @ts-check
-const { test, expect } = require('@playwright/test');
-const mrc = require('../src/main');
+import { test, expect } from '@playwright/test';
+import mrc from '../src/main';
 
 test('Check Multiple Instances', async () => {
   const maxPlayersPerInstance = 8;

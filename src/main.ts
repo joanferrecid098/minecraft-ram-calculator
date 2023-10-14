@@ -46,4 +46,4 @@ function calculateRAMNeeded (numPlayers:number, maxPlayersPerInstance:number, ma
   return response;
 }
 
-export default calculateRAMNeeded;
+export default { calculateRAMNeeded };
