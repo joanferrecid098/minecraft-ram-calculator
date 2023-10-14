@@ -31,7 +31,7 @@ const maxPlayersPerInstance = 8; // Set the maximum players on the instance
 const maxInstances = 7; // Set your maximum instances here.
 
 const numPlayers = 100; // The number of players on your server
-const ramNeeded = mrc(numPlayers, maxPlayersPerInstance, maxInstances);
+const ramNeeded = mrc.calculateRAMNeeded(numPlayers, maxPlayersPerInstance, maxInstances);
 
 console.log(`For ${numPlayers} players, you need ${ramNeeded.ramNeeded} GB RAM.`);
 console.log(`This will use ${ramNeeded.instances} instances, leaving ${ramNeeded.playersLeftOut} players left out.`);
